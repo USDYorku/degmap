@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--Version 1.0-->
+<html>
+    <head>
+        <title> DegMap </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="favicon.ico" sizes="16x16 32x32" type="image/ico">
+        <meta charset="utf-8">
+        <link href="degmap.css" rel="stylesheet">
+        <script src="prototype.js"></script>
+        <script src="utils.js"></script>
+        <script src="course.js"></script>
+        <script src="controller.js"></script>
+        <script src="model.js"></script>
+        <script src="priority.js"></script>
+        <script src="manualCoures.js"></script>
+        <script src="db.js"></script>
+        <script src="database.js"></script>
+    </head>
+    <body id="container">
+        <header>
+            <img src="student-icon.png" alt="student icon">
+            <h1 class="TopBanner">Course Planning</h1>
+        </header>
+        <div class="selectionControlsContainer">
+            <form id="optionsForm">
+                <!-- TODO: Line up options text and line up drop downs -->
+                <div id="facultySection">
+                    <label class="optionCaption"> Choose your faculty</label>
+                    <select id="facultySelect">
+                        <option class="defDropDownOption" disabled selected value> -- select an option -- </option>
+                    </select>
+                </div>
+                <div id="programSection">
+                    <label class="optionCaption"> Choose your program</label>
+                    <select id="programSelect">
+                        <option class="defDropDownOption" disabled selected value> -- select an option -- </option>
+                    </select>
+                    <input id="reloadProgramBtn" type="button" value="Reload Program">
+                </div>
+            </form>
+            <button id="generateOptionsBtn">Generate Options</button>
+        </div>
+        <div id="infoDisplay">
+            <div id="mainContent">
+                <p> Courses will show here once a faculty and program are selected </p>
+            </div>
+            <div id="sideContent" class="centered">
+                <div id="userMsgDiv">
+                    <!--Span placed to hold tool tip so that it does not get
+                    overwritten when $("userMsgDiv").innerHTML gets set-->
+                    <span class="tooltip">
+                        <span id="userNotice" class="clickableText"> </span>
+                        <span class="tooltiptext">Click to clear</span>
+                    </span>
+                </div>
+                <div id="standardBtnsDiv">
+                    <button id="clearCourseDetails">Clear Course Details</button>
+                    <button id="additionalControlsBtn">Show/Hide Additional Controls</button>
+                </div>
+                <div id="auxBtnsDiv" class="hidden">
+                    <p> <button id="saveInputBtn">Save Input</button>
+                        <button id="loadInputBtn">Load Input</button>
+                        <button id="saveOutputBtn">Save Last Output</button>
+                        <button id="loadOutputBtn">Load Output</button>
+                    </p>
+                    <p>
+                        <label>Max Courses per semester: </label>
+                        <select id="coursesPerSemester">
+                            <option value="3"> 3 </option>
+                            <option value="4"> 4 </option>
+                        </select>
+                    </p>
+                </div>
+                <p id="sideContentHeading">Supplementary Info</p>
+                <div id="extractsContainer" class="containerBoarder">
+                    <h4 class="smallMarginHeading">Prerequisites</h4>
+                    <p id="prerequisiteContent" class="smallMarginHeading"></p>
+                    <h4 class="smallMarginHeading">
+                        Credits:
+                        <span id="creditsContent" class="smallMarginHeading"></span>
+                    </h4>
+                    <div id="outputPriorityContainer" class="hidden">
+                        <h4 class="smallMarginHeading">
+                            Priority - Count:
+                            <span id="countContent" class="smallMarginHeading"></span>
+                            Path:
+                            <span id="pathContent" class="smallMarginHeading"></span>
+                        </h4>
+                        <h4>
+                            Dependent Courses: <span id="dependentCoursesContent"></span>
+                        </h4>
+                    </div>
+                </div>
+                <div id="descriptionContainer" class="containerBoarder leftAlign">
+                    <h4 class="smallMarginHeading">Description</h4>
+                    <p id="descriptionContent" class="smallMarginHeading"></p>
+                </div>
+                <div id="optionSummaryContainer" class="containerBoarder">
+                    <h4 class="smallMarginHeading">Options Summary</h4>
+                    <p id="optSummaryContent" class="smallMarginHeading"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

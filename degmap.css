@@ -1,0 +1,210 @@
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+}
+
+@-ms-viewport {
+    width: device-width ;
+}
+
+body{
+    margin: auto;
+    background-color: #489E6F;
+    height: 100%;
+    font-family: Oswald, sans-serif;
+}
+
+header{
+    overflow: hidden;
+    background-color: white;
+    max-height: 20%;
+    text-align: center;
+}
+
+.selectionControlsContainer {
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+}
+
+.TopBanner {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: black;
+    display: inline;
+    position: relative;
+    height: .5em;
+    vertical-align: middle;
+}
+
+.optionCaption {
+    margin: 0px;
+    padding-top: 10px;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: black;
+}
+
+/*Common Setting for Content*/
+#mainContent, #sideContent{
+    height: 26em;
+    margin: 1%;
+    background-color: white;
+    border: 1px solid #87caed;
+    overflow: auto;
+    color: black;
+}
+
+#mainContent{
+    text-transform: uppercase;
+    line-height: 2em;
+    width: 55%;
+    float: left;
+    margin-right: 0.5%;
+}
+
+#sideContent{
+    width: 40%;
+    line-height: 1em;
+    float: right;
+    margin-left: 0.5%;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two
+columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 750px) {
+    #mainContent, #sideContent {
+        width: 95%;
+        float: none;
+        margin: 1em 2.5%;
+    }
+    /*TODO: Make controls at top responsive to size*/
+}
+
+img{
+    width: 5%;
+    height: 5%;
+    display: inline;
+    vertical-align: middle;
+}
+
+ul{
+    list-style-type: none;
+}
+
+li {
+    text-align: left;
+}
+
+#generateOptionsBtn {
+    margin: 5px;
+}
+
+.defDropDownOption {
+    display:none;
+}
+
+.containerBoarder, #auxBtnsDiv{
+    border: .25em solid #4286f4;
+    margin: 1%;
+    padding: 1%;
+}
+
+.courseContainerContent{
+    text-align: left;
+    margin: 0em 2em 1em 2em;
+    padding-inline-start: 0;
+}
+
+.courseContainerHeading{
+    margin: 1em 1em 0em 1em;
+}
+
+.centered, h1, h2, h3, h4, h5, h6{
+    text-align: center;
+}
+
+.leftAlign {
+    text-align: left;
+}
+
+#sideContentHeading{
+    font-weight:bold;
+}
+
+.checkBoxContainer {
+    margin: 0em 0.5em 0em 0em;
+}
+
+.clickableText{
+    cursor: pointer;
+}
+
+.smallMarginHeading, #outputPriorityContainer{
+    margin: .5em 0em;
+}
+
+#userNotice {
+    color: red;
+}
+
+/*Needed otherwise only edge of tooltip shows*/
+.paddingForUserMsgToolTip {
+    padding: 2em 0 1em 0;
+}
+
+#auxBtnsDiv{
+    padding: 1em 0;
+}
+
+.hidden{
+    display: none;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.prereqMet {
+    color: #489E6F;
+}
+
+.prereqNotMet {
+    color: #b51605
+}
