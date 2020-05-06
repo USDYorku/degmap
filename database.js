@@ -7,7 +7,7 @@ var dataCourses;
 // THIS SELF INVOKING FUNCTION RUNS AS SOON AS THE FILE IS LOADED POSSIBLY
 // BEFORE THE ONLOAD AND HOPEFULLY THE DATA SHOULD BE READY BEFORE IT IS NEEDED
 (function dataPulldataCoursesFromDBtoRAM() {
-    dataGetFromLink("https://api.myjson.com/bins/15puk6", dataFilldataCourses);
+    dataGetFromLink("courses.json", dataFilldataCourses);
 }());
 
 /**
