@@ -193,19 +193,20 @@ function dataGetCourse(courseCode) {
 
 /**
  * Filters out the list of computer science courses that have the specified
- * level. Only EECS courses without 2nd digit 1-4 (5 may be used as elective
- * but is not a major credit)
+ * level. Only EECS courses without 2nd digit 5 (Elective) may be
+ * used as major credit
  * 3000- and 4000-level EECS courses are divided into four areas as follows:
  * 1 - theory and numerical computation (second digit is 1),
  * 2 - systems (second digit is 2),
  * 3 - software development (second digit is 3) and
- * 4 -applications (second digit is 4)
+ * 4 - applications (second digit is 4)
+ * 5 - elective
  *
  * @param {String} level can be "3", "4" or "34" for 3000-, 4000- or both
  * @returns {Array}
  */
 function dataGetCS(level) {
-    var re = new RegExp("EECS[" + level + "][1-4]\\d\\d");
+    var re = new RegExp("EECS[" + level + "][^5]\\d\\d");
     var result = [];
     for (var i = 0; i < dataCourses.length; i++) {
         if (re.test(dataCourses[i].code)) {
