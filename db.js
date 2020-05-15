@@ -17,8 +17,8 @@ function dbGetPrograms(facultyID) {
     var result = [];
     if (facultyID === "1") {
         result = [
-            {id: 1, name: "BACHELOR PROGRAM (BA) 2018-2019"},
-            {id: 2, name: "Honours Major Program (Honours BA) 2018-2019"}
+            {id: 1, name: "BACHELOR PROGRAM (BA) 2017-2018"},
+            {id: 2, name: "Honours Major Program (Honours BA) 2017-2018"}
         ];
     } else if (facultyID === "2") {
         result = [
